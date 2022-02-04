@@ -57,49 +57,86 @@
 }
 
 
-/* layout */
-
-.wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-
 /* Parallax Styles */
 
-.parallax-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
+.parallax {
+    perspective: 1px;
+    height: 100vh;
     overflow-x: hidden;
-    overflow-y: scroll;
-    perspective: 8px;
-    perspective-origin: 50%;
-    display: flex;
+    overflow-y: auto;
 }
 
-.parallax-background {
+.object-wrapper {
     position: absolute;
     top: 0;
+    right: 0;
+    bottom: 0;
     left: 0;
+    background: none;
+    justify-content: center;
+}
+
+.speed-1 {
+    transform: translateZ(-1px) scale(2);
+}
+
+.speed-2 {
+    transform: translateZ(-2px) scale(3);
+}
+
+.speed-3 {
+    transform: translateZ(-3px) scale(4);
+}
+
+.speed-4 {
+    transform: translateZ(-4px) scale(5);
+}
+
+.speed-5 {
+    transform: translateZ(-5px) scale(6);
+}
+
+.speed-6 {
+    transform: translateZ(-6px) scale(7);
+}
+
+.object {
+    height: 100px;
     width: 100%;
-    height: 100%;
-    transform: translateZ(2px);
 }
 
-.parallax-foreground {
-    position: relative;
-    margin-top: auto;
-    margin-bottom: 50px;
-    transform-origin: 0;
-    transform: translateZ(5px) scale(0.725);
-    /* Uncomment the code below to see the difference the scale property makes! */
-    /* transform: translateZ(3px); */
-    /* transform: translateZ(0) scale(1); */
+.object-1 {
+    margin-top: 0;
+    background: red;
 }
 
-.parallax-foreground h1 {
-    font-size: 36px;
+.object-2 {
+    margin-top: 10rem;
+    background: yellow;
+}
+
+.object-3 {
+    margin-top: 50rem;
+    background: blue;
+}
+
+
+/* 
+.object-4 {
+    margin-top: 30rem;
+    background: green;
+}
+
+.object-5 {
+    margin-top: 40rem;
+    background: pink;
+} */
+
+.object-6 {
+    margin-top: 80rem;
+    background: purple;
+}
+
+.page-content {
+    height: 190vh;
 }

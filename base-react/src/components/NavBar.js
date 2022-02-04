@@ -3,25 +3,42 @@ import styled from 'styled-components';
 import { devices } from '../resources/media';
 
 const Navbar = styled.div.attrs({ className: 'container' })`
+  position: absolute;
+  top: -350px;
   display: flex;
   justify-content: space-between;
-  height: 9rem;
+  height: 9.8rem;
   padding-left: 0;
   padding-right: 0;
   margin-top: 4rem;
   margin-bottom: 2rem;
+  -webkit-transition: all 1.5s;
+  -moz-transition: all 1.5s;
+  -o-transition: all 1.5s;
+  -ms-transition: all 1.5s;
+  transition: all 1.5s;
+  z-index: 5;
+  box-shadow: -4px 13px 38px -9px #000000;
+
+  ${({ show }) => show && `
+  top: 0;
+  
+  `}
 
   @media ${devices.mobile} {
     margin-top: 5rem;
     margin-bottom: 3rem;
+    height: 6.8rem;
   }
   @media ${devices.tablet} {
     margin-top: 5rem;
     margin-bottom: 5rem;
+    height: 9.3rem;
   }
   @media ${devices.laptop} {
     margin-top: 6rem;
     margin-bottom: 6rem;
+    height: 9.8rem;
   }
 `
 const LNav = styled.div`
@@ -79,10 +96,11 @@ const Profile = styled.img.attrs({
   }
 `
 
-function NavBar() {
+function NavBar({ show }) {
+
   return (
     <Fragment>
-      <Navbar>
+      <Navbar show={show}>
         <LNav>
           <Profile className="to-color" altText="not me" />
         </LNav>
