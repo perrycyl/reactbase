@@ -40,7 +40,7 @@ const Object3 = styled.div.attrs({ className: "object object-3" })`
 
     @media ${devices.mobile} {
         width: 100vw;
-        margin-top: 8rem;
+        margin-top: ${mobileMarginTop};
     }
 
     @media ${devices.tablet} {

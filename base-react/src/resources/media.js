@@ -6,12 +6,14 @@ const sizes = {
 };
 
 const maxSizes = {
+    smallMobile: '300px',
     mobile: '767px',
     tablet: '1023px',
     laptop: '2559px'
 }
 
 export const devices = {
+    smallMobile: `(max-width: ${sizes.smallMobile})`,
     mobile: `(min-width: ${sizes.mobile}) and (max-width: ${maxSizes.mobile})`,
     tablet: `(min-width: ${sizes.tablet}) and (max-width: ${maxSizes.tablet})`,
     laptop: `(min-width: ${sizes.laptop}) and (max-width: ${maxSizes.laptop})`,

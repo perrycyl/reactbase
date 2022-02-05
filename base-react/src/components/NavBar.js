@@ -7,11 +7,11 @@ const Navbar = styled.div.attrs({ className: 'container' })`
   top: -350px;
   display: flex;
   justify-content: space-between;
-  height: 5.8rem;
+  height: 9.8rem;
   padding-left: 0;
   padding-right: 0;
-  margin-top: 4rem;
-  margin-bottom: 2rem;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
   -webkit-transition: all 1.5s;
   -moz-transition: all 1.5s;
   -o-transition: all 1.5s;
@@ -52,7 +52,7 @@ const Title = styled.div`
   width: 100%;
   height: 100%;
   font-family: 'Monterey' !important;
-  font-size: 2rem;
+  font-size: 1.8rem;
 
   @media ${devices.mobile} {
     font-size: 2.6rem;
@@ -61,6 +61,9 @@ const Title = styled.div`
     font-size: 4rem;
   }
   @media ${devices.laptop} {
+    font-size: 5rem;
+  }
+  @media ${devices.desktop} {
     font-size: 5rem;
   }
 `
@@ -75,25 +78,32 @@ const Login = styled.div`
 const Profile = styled.img.attrs({
   src: "/assets/images/profile.jpg"
 })`
-  width: 8rem;
-  height: 8rem;
+  height: 10.2rem;
+  width: 10.2rem;
   position: relative;
-  top: 1rem;
+  top: -2rem;
 
   overflow: hidden;
   border-radius: 50%;
 
-  @media ${devices.mobile} {
-    height: 10.2rem;
-    width: 10.2rem;
-    top:-2rem;
-
-  }
   @media ${devices.tablet} {
     height: 13.8rem;
     width: 13.8rem;
     left: 8%;
   }
+
+  @media ${devices.laptop} {
+    height: 13.8rem;
+    width: 13.8rem;
+    left: 8%;
+  }
+
+  @media ${devices.desktop} {
+    height: 13.8rem;
+    width: 13.8rem;
+    left: 8%;
+  }
+
 `
 
 function NavBar({ show }) {
