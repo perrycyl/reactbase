@@ -78,7 +78,7 @@ const Profile = styled.img.attrs({
   width: 8rem;
   height: 8rem;
   position: relative;
-  top: -1rem;
+  top: 1rem;
 
   overflow: hidden;
   border-radius: 50%;
