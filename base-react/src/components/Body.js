@@ -12,9 +12,10 @@ const Parallax = styled.div.attrs({
     opacity: 100%;
 `
 const Speed3 = styled.div.attrs({ className: "object-wrapper speed-1" })`
+    right: 100%;
 `
 const Object3 = styled.div.attrs({ className: "object object-3" })`
-    width: 100vw;
+    width: 50vw;
     height: 50vh;
     background-image: url("/assets/images/Toff.jpg");
     background-size: 100%;

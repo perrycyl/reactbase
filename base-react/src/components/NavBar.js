@@ -7,7 +7,7 @@ const Navbar = styled.div.attrs({ className: 'container' })`
   top: -350px;
   display: flex;
   justify-content: space-between;
-  height: 9.8rem;
+  height: 5.8rem;
   padding-left: 0;
   padding-right: 0;
   margin-top: 4rem;
