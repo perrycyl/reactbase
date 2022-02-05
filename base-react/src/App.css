@@ -100,6 +100,10 @@
     transform: translateZ(-6px) scale(7);
 }
 
+.speed-10 {
+    transform: translateZ((-10px) scale(11));
+}
+
 .object {
     height: 100px;
     width: 100%;
@@ -135,6 +139,11 @@
 .object-6 {
     margin-top: 80rem;
     background: purple;
+}
+
+.object-4 {
+    margin-top: calc(50rem + 50vh);
+    background: orange;
 }
 
 .page-content {

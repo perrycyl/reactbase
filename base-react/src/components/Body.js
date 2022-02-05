@@ -11,7 +11,8 @@ const Parallax = styled.div.attrs({
     -webkit-filter: grayscale(0%);
     opacity: 100%;
 `
-const Speed3 = styled.div.attrs({ className: "object-wrapper speed-1" })`
+
+const Surpise = styled.div.attrs({ className: "object-wrapper speed-1" })`
     right: 100%;
 `
 const Object3 = styled.div.attrs({ className: "object object-3" })`
@@ -21,12 +22,21 @@ const Object3 = styled.div.attrs({ className: "object object-3" })`
     background-size: 100%;
     background-repeat: no-repeat;
 `
-const Speed6 = styled.div.attrs({ className: "object-wrapper speed-6" })`
+const About = styled.div.attrs({ className: "object-wrapper speed-10" })`
 `
-const Object6 = styled.div.attrs({ className: "object object-3" })`
+const Object3a = styled.div.attrs({ className: "object object-3" })`
     width: 100vw;
     height: 50vh;
     background: purple;
+`
+
+const Welcome = styled.div.attrs({ className: "object-wrapper speed-1" })`
+
+`
+const Object4 = styled.div.attrs({ className: "object object-4" })`
+    width: 100vw;
+    height: 20vh;
+    background: orange;
 `
 
 
@@ -58,12 +68,15 @@ function Body() {
             <Container>
                 <NavBar show={showNav} />
                 <Parallax onScroll={onScroll}>
-                    <Speed3>
+                    <Surpise>
                         <Object3>blue</Object3>
-                    </Speed3>
-                    <Speed6 className="object-wrapper speed-6">
-                        <Object6>purple</Object6>
-                    </Speed6>
+                    </Surpise>
+                    <About>
+                        <Object3a>purple</Object3a>
+                    </About>
+                    <Welcome>
+                        <Object4>orange</Object4>
+                    </Welcome>
                     <div className="page-content">
                     </div>
                 </Parallax>
