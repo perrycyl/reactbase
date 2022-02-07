@@ -42,7 +42,7 @@
     width: 100%;
     margin-right: auto;
     margin-left: auto;
-    max-width: 255.9rem;
+    max-width: 256rem;
 }
 
 .to-color {
@@ -76,6 +76,10 @@
     justify-content: center;
 }
 
+.speed-0 {
+    transform: translateZ(1px) scale(0);
+}
+
 .speed-1 {
     transform: translateZ(-1px) scale(2);
 }
@@ -101,7 +105,11 @@
 }
 
 .speed-10 {
-    transform: translateZ((-10px) scale(11));
+    transform: translateZ(-10px) scale(11);
+}
+
+.speed-20 {
+    transform: translateZ(-40px) scale(41);
 }
 
 .object {
@@ -121,7 +129,6 @@
 
 .object-3 {
     margin-top: 50rem;
-    background: blue;
 }
 
 
@@ -147,5 +154,5 @@
 }
 
 .page-content {
-    height: 190vh;
+    height: 280vh;
 }

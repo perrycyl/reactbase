@@ -7,11 +7,11 @@ const Navbar = styled.div.attrs({ className: 'container' })`
   top: -350px;
   display: flex;
   justify-content: space-between;
-  height: 9.8rem;
+  height: 5.8rem;
   padding-left: 0;
   padding-right: 0;
-  margin-top: 6rem;
-  margin-bottom: 6rem;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
   -webkit-transition: all 1.5s;
   -moz-transition: all 1.5s;
   -o-transition: all 1.5s;
@@ -19,6 +19,7 @@ const Navbar = styled.div.attrs({ className: 'container' })`
   transition: all 1.5s;
   z-index: 5;
   box-shadow: -4px 13px 38px -9px #000000;
+  background-color: white;
 
   ${({ show }) => show && `
   top: 0;
@@ -39,6 +40,17 @@ const Navbar = styled.div.attrs({ className: 'container' })`
     margin-top: 6rem;
     margin-bottom: 6rem;
     height: 9.8rem;
+  }
+
+  @media ${devices.desktop} {
+    margin-top: 9rem;
+    margin-bottom: 9rem;
+    height: 13.8rem;
+  }
+  @media ${devices.wideDesktop} {
+    margin-top: 9rem;
+    margin-bottom: 9rem;
+    height: 13.8rem;
   }
 `
 const LNav = styled.div`
@@ -64,7 +76,10 @@ const Title = styled.div`
     font-size: 5rem;
   }
   @media ${devices.desktop} {
-    font-size: 5rem;
+    font-size: 7rem;
+  }
+  @media ${devices.wideDesktop} {
+    font-size: 7rem;
   }
 `
 const TitleText = styled.div`
@@ -99,9 +114,16 @@ const Profile = styled.img.attrs({
   }
 
   @media ${devices.desktop} {
-    height: 13.8rem;
-    width: 13.8rem;
-    left: 8%;
+    height: 19.8rem;
+    width: 19.8rem;
+    left: 32%;
+    top: -2 rem;
+  }
+  @media ${devices.wideDesktop} {
+    height: 19.8rem;
+    width: 19.8rem;
+    left: 32%;
+    top: -2 rem;
   }
 
 `
