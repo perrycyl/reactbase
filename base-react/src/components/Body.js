@@ -33,6 +33,7 @@ const Parallax = styled.div.attrs({
 `
 
 const Surpise = styled.div.attrs({ className: "object-wrapper speed-4 container" })`
+    transform: translateZ(-3px) scale(4);
     margin-top: calc(${mt.smallMobileMarginTop});
     right: 43%%;
     @media ${devices.mobile} {
@@ -68,6 +69,7 @@ const Surpise = styled.div.attrs({ className: "object-wrapper speed-4 container"
     }
 `
 const SurpriseBlock = styled.div.attrs({ className: "object object-3" })`
+    display: None;
     width: 86vw;
     height: 50vh;
     background-image: url("/assets/images/Toff.jpg");
@@ -90,65 +92,28 @@ const SurpriseBlock = styled.div.attrs({ className: "object object-3" })`
     }
 
     @media ${devices.laptop} {
-        width: 25vw;
+        display: block;
+        width: 27vw;
         margin-top: calc(${mt.laptopMarginTop} + -23rem);
-        margin-left: 5rem;
+        margin-left: 13rem;
     }
     @media ${devices.desktop} {
-        width: 25vw;
-        margin-top: calc(${mt.desktopMarginTop} + -23rem);
-        margin-left: 8rem;
+        display: block;
+        width: 27vw;
+        margin-top: calc(${mt.desktopMarginTop} + -37rem);
+        margin-left: 24rem;
     }
 
     @media ${devices.wideDesktop} {
-        width: 15vw;
-        margin-top: calc(${mt.desktopMarginTop} + 23rem);
-        margin-left: 6rem;
+        display: block;
+        width: 16vw;
+        margin-top: calc(${mt.desktopMarginTop} + -30rem);
+        margin-left: 59rem;
     }
 
     }
 `
 
-
-const Gallery = styled.div.attrs({ className: 'object-wrapper speed-6' })`
-    @media ${devices.laptop} {
-        transform: translateZ(-5px) scale(6);
-    }
-    @media ${devices.desktop} {
-        transform: translateZ(-5px) scale(6);
-    }
-
-    @media ${devices.wideDesktop} {
-        transform: translateZ(-5px) scale(6);
-    }
-`
-
-const GalleryObj = styled.div.attrs({ className: "object object-4" })`
-    margin-top: calc(${mt.smallMobileMarginTop} + 50vh);
-    width: 100vw;
-    height: 20vh;
-    background: red;
-    max-width: 256rem;
-
-    @media ${devices.mobile} {
-        margin-top: calc(${mt.mobileMarginTop} + 50vh);
-    }
-
-    @media ${devices.tablet} {
-        margin-top: calc(${mt.tabletMarginTop} + 50vh);
-    }
-
-    @media ${devices.laptop} {
-        margin-top: calc(${mt.laptopMarginTop} + 32rem);
-    }
-    @media ${devices.desktop} {
-        margin-top: calc(${mt.desktopMarginTop} + 32rem);
-    }
-
-    @media ${devices.wideDesktop} {
-        margin-top: calc(${mt.desktopMarginTop} + 32rem);
-    }
-`
 
 const PageContent = styled.div.attrs({ className: "page-content" })`
     @media ${devices.laptop} {
@@ -158,7 +123,7 @@ const PageContent = styled.div.attrs({ className: "page-content" })`
         height: 400vh;
     }
     @media ${devices.wideDesktop} {
-        height: 400vh;
+        height: 500vh;
     }
 `
 
@@ -176,13 +141,6 @@ function Body() {
         const scrollY = e.target.scrollTop;
         setScrollPos(scrollY);
     };
-
-
-    function handleResize() {
-        const height = window.innerHeight || null;
-        const width = window.innerWidth || null;
-        return { width, height };
-    }
 
     function getWindowDimensions() {
         const hasWindow = typeof window !== 'undefined';
@@ -207,7 +165,7 @@ function Body() {
     }, [hasWindow]);
 
     useEffect(() => {
-        if (scrollPos > 100 && windowDimensions.width < 1024) {
+        if (scrollPos > 100) {
             console.log("HIDE")
             setShowNav(false);
         } else {
@@ -223,7 +181,7 @@ function Body() {
                 <NavBar show={showNav} />
                 <Parallax onScroll={onScroll}>
                     <Surpise>
-                        <SurpriseBlock wd={windowDimensions}>blue</SurpriseBlock>
+                        <SurpriseBlock wd={windowDimensions} />
                     </Surpise>
                     <About mtSizes={mt} />
                     <UnderImage mtSizes={mt} />

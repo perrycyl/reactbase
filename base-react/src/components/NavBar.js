@@ -2,6 +2,9 @@ import { Fragment } from 'react';
 import styled from 'styled-components';
 import { devices } from '../resources/media';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
+
 const Navbar = styled.div.attrs({ className: 'container' })`
   position: absolute;
   top: -350px;
@@ -30,27 +33,35 @@ const Navbar = styled.div.attrs({ className: 'container' })`
     margin-top: 5rem;
     margin-bottom: 3rem;
     height: 6.8rem;
+    top: 0;
   }
   @media ${devices.tablet} {
     margin-top: 5rem;
     margin-bottom: 5rem;
     height: 9.3rem;
+    top: 0;
   }
   @media ${devices.laptop} {
     margin-top: 6rem;
     margin-bottom: 6rem;
     height: 9.8rem;
+    top: 0;
   }
 
   @media ${devices.desktop} {
     margin-top: 9rem;
     margin-bottom: 9rem;
     height: 13.8rem;
+    top: 0;
   }
   @media ${devices.wideDesktop} {
     margin-top: 9rem;
     margin-bottom: 9rem;
     height: 13.8rem;
+    ${({ show }) => show && `
+      top: 0;
+    
+    `}
   }
 `
 const LNav = styled.div`
@@ -86,10 +97,6 @@ const TitleText = styled.div`
   margin-top: 2rem;
 `
 
-const Login = styled.div`
-  width: 30rem;
-  height: 100%;
-`
 const Profile = styled.img.attrs({
   src: "/assets/images/profile.jpg"
 })`
@@ -128,6 +135,68 @@ const Profile = styled.img.attrs({
 
 `
 
+const Social = styled.a.attrs({ href: 'https://www.linkedin.com/in/perry-liu-dev' })`
+  display: flex;
+  flex-direction: row;
+  margin-top: 1.2rem;
+  width: 30rem;
+  height: 100%;
+  text-decoration: none;
+  cursor: pointer; 
+`
+const StyledLinkedinIcon = styled(FontAwesomeIcon)`
+  width: 1.6rem;
+  height: 1.6rem;
+
+  @media ${devices.tablet} {
+
+  }
+
+  @media ${devices.laptop} {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  @media ${devices.desktop} {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+  @media ${devices.wideDesktop} {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+`
+
+const LinkedIn = styled.div`
+  color: #7575db;
+  width: 2.4rem;
+  height: 2.4rem;
+`
+const Name = styled.div`
+  text-align: left;
+  width: 100%;
+  @media ${devices.tablet} {
+
+  }
+
+  @media ${devices.laptop} {
+    font-size: 2.6rem;
+    padding-left: 1.2rem;
+    padding-top: .2rem;
+  }
+
+  @media ${devices.desktop} {
+    font-size: 2.6rem;
+    padding-left: 1.2rem;
+    padding-top: .2rem;
+  }
+  @media ${devices.wideDesktop} {
+    font-size: 2.6rem;
+    padding-left: 1.2rem;
+    padding-top: .2rem;
+  }
+`
+
 function NavBar({ show }) {
 
   return (
@@ -139,7 +208,12 @@ function NavBar({ show }) {
         <Title>
           <TitleText>Its <s>Not</s> Perry </TitleText>
         </Title>
-        <Login>Sign In</Login>
+        <Social>
+          <LinkedIn>
+            <StyledLinkedinIcon icon={faLinkedin} />
+          </LinkedIn>
+          <Name>Perry Liu</Name>
+        </Social>
       </Navbar>
     </Fragment>
   );

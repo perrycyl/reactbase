@@ -3,7 +3,6 @@ import { devices } from '../resources/media';
 
 const Object4 = styled.div.attrs({ className: "object object-4" })`
     margin-top: calc(${({ mt }) => mt.smallMobileMarginTop} + 50vh);
-    width: 100vw;
     height: 20vh;
     max-height: 20vh;
     max-width: 256rem;
@@ -25,7 +24,7 @@ const Object4 = styled.div.attrs({ className: "object object-4" })`
     }
 
     @media ${devices.laptop} {
-        margin-top: calc(${({ mt }) => mt.laptopMarginTop} + 32rem);
+        margin-top: calc(${({ mt }) => mt.laptopMarginTop} + 54rem);
     }
     @media ${devices.desktop} {
         margin-top: calc(${({ mt }) => mt.desktopMarginTop} + 54vh);
@@ -60,22 +59,31 @@ const UnderImageContent = styled.div.attrs({ className: "object-wrapper speed-20
 `
 
 const Obj4Image = styled.img`
+        width: 150%;
     @media ${devices.mobile} {
+        width: 150%;
     }
 
     @media ${devices.tablet} {
+        width: 150%;
     }
 
     @media ${devices.laptop} {
-        max-height: 20vh;
+        width: 80%;
     }
     @media ${devices.desktop} {
-        max-height: 20vh;
+        width: 80%;
     }
 
     @media ${devices.wideDesktop} {
-        max-height: 20vh;
+        width: 80%;
     }
+`
+const Filler = styled.div`
+    margin-top: -1rem;
+    height: 100vh;
+    background: white;
+    width: 100vw;
 `
 
 function UnderImage({ mtSizes }) {
@@ -83,6 +91,7 @@ function UnderImage({ mtSizes }) {
         <UnderImageContent>
             <Object4 mt={mtSizes}>
                 <Obj4Image src='/assets/images/lake.jpg' alt="lake" />
+                <Filler />
             </Object4>
         </UnderImageContent>
     );
